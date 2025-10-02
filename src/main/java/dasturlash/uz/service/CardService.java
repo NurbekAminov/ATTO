@@ -7,7 +7,6 @@ import dasturlash.uz.enums.GeneralStatus;
 import dasturlash.uz.enums.TransactionType;
 import dasturlash.uz.repository.CardRepository;
 import dasturlash.uz.repository.ProfileCardRepository;
-import dasturlash.uz.repository.TransactionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -40,7 +39,7 @@ public class CardService {
         card.setBalance(0.0);
         card.setStatus(GeneralStatus.ACTIVE);
         card.setVisible(true);
-        card.setCreated_date(LocalDateTime.now());
+        card.setCreatedDate(LocalDateTime.now());
         int effectedRow = cardRepository.createWithPSS(card);
         if (effectedRow == 1) {
             System.out.println("Card created.");
@@ -63,7 +62,7 @@ public class CardService {
 
         for (CardDTO cardDTO : cardDTOList) {
             System.out.printf("| %-4d | %-16s | %-12s | %-8s | %-18s |%n",
-                    cardDTO.getId(), cardDTO.getCardNumber(), cardDTO.getExpDate(), cardDTO.getStatus(), cardDTO.getCreated_date());
+                    cardDTO.getId(), cardDTO.getCardNumber(), cardDTO.getExpDate(), cardDTO.getStatus(), cardDTO.getCreatedDate());
         }
         System.out.printf("-------------------------------------------------------------------------%n");
     }
@@ -204,7 +203,7 @@ public class CardService {
             return;
         }
         // Refill Card
-        double balance = card.getBalance() + amount;
+        Double balance = card.getBalance() + amount;
         card.setBalance(balance);
         cardRepository.updateCardBalance(cardNumber, balance);
         // make transaction

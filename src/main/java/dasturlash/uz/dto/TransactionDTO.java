@@ -8,7 +8,7 @@ import java.time.LocalDateTime;
 
 @Getter
 @Setter
-public class TransactionDTO {
+public class TransactionDTO extends TerminalDTO{
     private Integer cardId;
     private Integer terminalId;
     private Double amount;

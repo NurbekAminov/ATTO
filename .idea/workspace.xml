@@ -4,19 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7521d990-f026-47f5-b679-7322f5feaff1" name="Changes" comment="second commit">
+    <list default="true" id="7521d990-f026-47f5-b679-7322f5feaff1" name="Changes" comment="transaction2">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dasturlash/uz/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dasturlash/uz/controller/UserController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dasturlash/uz/dto/CardDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dasturlash/uz/dto/CardDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dasturlash/uz/dto/Terminal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dasturlash/uz/dto/TerminalDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dasturlash/uz/dto/Transaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dasturlash/uz/dto/TransactionDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dasturlash/uz/enums/TransactionType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dasturlash/uz/enums/TransactionType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dasturlash/uz/dto/TerminalDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dasturlash/uz/dto/TerminalDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dasturlash/uz/dto/TransactionDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dasturlash/uz/dto/TransactionDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dasturlash/uz/repository/CardRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dasturlash/uz/repository/CardRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dasturlash/uz/repository/ProfileCardRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dasturlash/uz/repository/ProfileCardRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dasturlash/uz/repository/TableRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dasturlash/uz/repository/TableRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dasturlash/uz/repository/TerminalRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dasturlash/uz/repository/TerminalRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dasturlash/uz/repository/TransactionRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dasturlash/uz/repository/TransactionRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dasturlash/uz/service/CardService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dasturlash/uz/service/CardService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dasturlash/uz/service/TransactionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dasturlash/uz/service/TransactionService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,7 +97,7 @@
       <workItem from="1759064637586" duration="14017000" />
       <workItem from="1759128853764" duration="10750000" />
       <workItem from="1759163684724" duration="12002000" />
-      <workItem from="1759389812511" duration="5136000" />
+      <workItem from="1759389812511" duration="14737000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <option name="closed" value="true" />
@@ -118,7 +115,23 @@
       <option name="project" value="LOCAL" />
       <updated>1759163454386</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="transaction">
+      <option name="closed" value="true" />
+      <created>1759395438133</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1759395438133</updated>
+    </task>
+    <task id="LOCAL-00004" summary="transaction2">
+      <option name="closed" value="true" />
+      <created>1759395595316</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1759395595316</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -150,6 +163,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="first commit" />
     <MESSAGE value="second commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="second commit" />
+    <MESSAGE value="transaction" />
+    <MESSAGE value="transaction2" />
+    <option name="LAST_COMMIT_MESSAGE" value="transaction2" />
   </component>
 </project>

@@ -25,7 +25,7 @@ public class CardRepository {
             ps.setDouble(3, dto.getBalance());
             ps.setString(4, dto.getStatus().name());
             ps.setBoolean(5, dto.getVisible());
-            ps.setTimestamp(6, Timestamp.valueOf(dto.getCreated_date()));
+            ps.setTimestamp(6, Timestamp.valueOf(dto.getCreatedDate()));
         };
         return jdbcTemplate.update(sql, setter);
     }
@@ -55,8 +55,13 @@ public class CardRepository {
         return jdbcTemplate.update(sql, status, cardId);
     }
 
-    public int updateCardBalance(String cardNumber, double balance) {
+    public int updateCardBalance(String cardNumber, Double balance) {
         String sql = "update card set balance =? where card_number =?";
+        return jdbcTemplate.update(sql, balance, cardNumber);
+    }
+
+    public int cardDebit(String cardNumber, Double balance){
+        String sql = "update card set balance = balance +? where card_number =?";
         return jdbcTemplate.update(sql, balance, cardNumber);
     }
 }

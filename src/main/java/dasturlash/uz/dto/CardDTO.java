@@ -16,5 +16,5 @@ public class CardDTO {
     private Double balance;
     private GeneralStatus status;
     private Boolean visible;
-    private LocalDateTime created_date;
+    private LocalDateTime createdDate;
 }

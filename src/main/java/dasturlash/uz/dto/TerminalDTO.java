@@ -8,10 +8,10 @@ import java.time.LocalDateTime;
 
 @Getter
 @Setter
-public class TerminalDTO {
+public class TerminalDTO extends CardDTO{
     private String code;
     private String address;
     private GeneralStatus status;
     private Boolean visible;
-    private LocalDateTime created_date;
+    private LocalDateTime createdDate;
 }

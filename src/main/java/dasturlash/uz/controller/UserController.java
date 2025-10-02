@@ -2,6 +2,7 @@ package dasturlash.uz.controller;
 
 import dasturlash.uz.Container.ComponentContainer;
 import dasturlash.uz.service.CardService;
+import dasturlash.uz.service.TransactionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
@@ -13,6 +14,8 @@ public class UserController {
     private CardService cardService;
     @Autowired
     private ComponentContainer componentContainer;
+    @Autowired
+    private TransactionService transactionService;
 
     public void start() {
 
@@ -37,13 +40,7 @@ public class UserController {
                     refill();
                     break;
                 case 6:
-
-                    break;
-                case 7:
-
-                    break;
-                case 8:
-
+                    transactionsList();
                     break;
                 case 0:
                     System.out.println("System end");
@@ -61,9 +58,7 @@ public class UserController {
         System.out.println("3. Change card status.");
         System.out.println("4. Delete card.");
         System.out.println("5. Refill.");
-        System.out.println("6. .");
-        System.out.println("7. .");
-        System.out.println("8. .");
+        System.out.println("6. Transactions list.");
         System.out.println("0. Exit.");
     }
 
@@ -115,5 +110,10 @@ public class UserController {
         Double amount = scanner.nextDouble();
 
         cardService.profileRefillCard(cardNumber, amount);
+    }
+
+    public void transactionsList(){
+        Integer profileId = componentContainer.getCurrentProfile().getId();
+        transactionService.getTransactionsList(profileId);
     }
 }

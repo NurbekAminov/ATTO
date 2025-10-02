@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Service
 public class TransactionService {
@@ -28,5 +29,25 @@ public class TransactionService {
         transactionDTO.setCreatedDate(LocalDateTime.now());
 
         transactionRepository.createTransaction(transactionDTO);
+        System.out.println("Operation completed");
+    }
+    public void getTransactionsList(Integer profileId){
+        List<TransactionDTO> transactionList = transactionRepository.getTransactionListByProfileId(profileId);
+        if (transactionList.isEmpty()){
+            System.out.println("Transactions not found");
+            return;
+        }
+
+        System.out.printf("---------------------------------------------------------------------------------------%n");
+        System.out.printf("                          Transactions List                                            %n");
+        System.out.printf("---------------------------------------------------------------------------------------%n");
+        System.out.printf("| %-16s | %-12s | %-9s | %-18s | %-8s |%n", "CardNumber", "Address", "balance", "CreatedDate", "Transaction type");
+        System.out.printf("---------------------------------------------------------------------------------------%n");
+        for (TransactionDTO transactionDTO : transactionList) {
+            System.out.printf("| %-16s | %-12s | %-9s | %-18s | %-8s |%n",
+                    transactionDTO.getCardNumber(), transactionDTO.getAddress(), transactionDTO.getAmount(),
+                    transactionDTO.getCreatedDate(), transactionDTO.getTransactionType().name());
+        }
+        System.out.printf("---------------------------------------------------------------------------------------%n");
     }
 }
