@@ -13,7 +13,7 @@ public class CardDTO {
     private Integer id;
     private String cardNumber;
     private LocalDate expDate;
-    private Integer balance;
+    private Double balance;
     private GeneralStatus status;
     private Boolean visible;
     private LocalDateTime created_date;

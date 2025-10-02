@@ -4,8 +4,10 @@ import dasturlash.uz.Container.ComponentContainer;
 import dasturlash.uz.dto.CardDTO;
 import dasturlash.uz.dto.ProfileCardDTO;
 import dasturlash.uz.enums.GeneralStatus;
+import dasturlash.uz.enums.TransactionType;
 import dasturlash.uz.repository.CardRepository;
 import dasturlash.uz.repository.ProfileCardRepository;
+import dasturlash.uz.repository.TransactionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -21,6 +23,8 @@ public class CardService {
     private ProfileCardRepository profileCardRepository;
     @Autowired
     private ComponentContainer componentContainer;
+    @Autowired
+    private TransactionService transactionService;
 
     public void createCard(String cardNumber, String expiredDate) {
         //todo - Card number and expiredDate Valid
@@ -33,7 +37,7 @@ public class CardService {
         CardDTO card = new CardDTO();
         card.setCardNumber(cardNumber);
         card.setExpDate(getCardExpDate(expiredDate));
-        card.setBalance(0);
+        card.setBalance(0.0);
         card.setStatus(GeneralStatus.ACTIVE);
         card.setVisible(true);
         card.setCreated_date(LocalDateTime.now());
@@ -148,9 +152,9 @@ public class CardService {
             return;
         }
 
-        Boolean bool = profileCardRepository.checkCardIdByProfileId(cardDTO.getId(), profileId);
+        ProfileCardDTO profileCard = profileCardRepository.getProfileCardByCardId(cardDTO.getId());
 
-        if (!bool) {
+        if (profileCard.getProfileId() != profileId) {
             System.out.println("This card is not your card");
             return;
         }
@@ -167,5 +171,43 @@ public class CardService {
         if (n == 1) {
             System.out.println("Card status change completed successfully");
         }
+    }
+
+    public void deleteCard(Integer profileId, String cardNumber){
+        CardDTO cardDTO = cardRepository.getByCardNumber(cardNumber);
+        if (cardDTO == null){
+            System.out.println("Card not found");
+            return;
+        }
+
+        ProfileCardDTO profileCard = profileCardRepository.getProfileCardByCardId(cardDTO.getId());
+        if (profileCard == null || !profileCard.getProfileId().equals(profileId)){
+            System.out.println("This card not belongs to you!");
+            return;
+        }
+
+        int n = profileCardRepository.deleteProfileCard(profileId, cardDTO.getId());
+        if (n != 0){
+            System.out.println("Card deleted");
+        }
+    }
+
+    public void profileRefillCard(String cardNumber, Double amount) {
+        CardDTO card = cardRepository.getByCardNumber(cardNumber);
+        if (card == null){
+            System.out.println("Card not found");
+            return;
+        }
+
+        if (!card.getVisible() || !card.getStatus().equals(GeneralStatus.ACTIVE)){
+            System.out.println("Card is in wrong status");
+            return;
+        }
+        // Refill Card
+        double balance = card.getBalance() + amount;
+        card.setBalance(balance);
+        cardRepository.updateCardBalance(cardNumber, balance);
+        // make transaction
+        transactionService.createTransaction(card.getId(), null, amount, TransactionType.REFILL);
     }
 }

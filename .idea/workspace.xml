@@ -4,14 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7521d990-f026-47f5-b679-7322f5feaff1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dasturlash/uz/Main.java" afterDir="false" />
+    <list default="true" id="7521d990-f026-47f5-b679-7322f5feaff1" name="Changes" comment="second commit">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dasturlash/uz/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dasturlash/uz/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dasturlash/uz/dto/CardDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dasturlash/uz/dto/CardDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dasturlash/uz/dto/Terminal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dasturlash/uz/dto/TerminalDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dasturlash/uz/dto/Transaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dasturlash/uz/dto/TransactionDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dasturlash/uz/enums/TransactionType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dasturlash/uz/enums/TransactionType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dasturlash/uz/repository/CardRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dasturlash/uz/repository/CardRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dasturlash/uz/repository/ProfileCardRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dasturlash/uz/repository/ProfileCardRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dasturlash/uz/repository/TableRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dasturlash/uz/repository/TableRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dasturlash/uz/repository/TerminalRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dasturlash/uz/repository/TerminalRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dasturlash/uz/repository/TransactionRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dasturlash/uz/repository/TransactionRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dasturlash/uz/service/CardService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dasturlash/uz/service/CardService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,6 +32,12 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PUSH_TAGS">
+      <GitPushTagMode>
+        <option name="argument" value="--tags" />
+        <option name="title" value="All" />
+      </GitPushTagMode>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="KubernetesApiProvider">{
@@ -87,8 +98,27 @@
       <workItem from="1758895519850" duration="714000" />
       <workItem from="1758953637169" duration="16935000" />
       <workItem from="1759064637586" duration="14017000" />
-      <workItem from="1759128853764" duration="10406000" />
+      <workItem from="1759128853764" duration="10750000" />
+      <workItem from="1759163684724" duration="12002000" />
+      <workItem from="1759389812511" duration="5136000" />
     </task>
+    <task id="LOCAL-00001" summary="first commit">
+      <option name="closed" value="true" />
+      <created>1759163269151</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1759163269151</updated>
+    </task>
+    <task id="LOCAL-00002" summary="second commit">
+      <option name="closed" value="true" />
+      <created>1759163454386</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1759163454386</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -116,5 +146,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="first commit" />
+    <MESSAGE value="second commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="second commit" />
   </component>
 </project>

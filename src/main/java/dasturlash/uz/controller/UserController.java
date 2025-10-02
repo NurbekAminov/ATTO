@@ -31,10 +31,10 @@ public class UserController {
                     changeCardStatus();
                     break;
                 case 4:
-
+                    deleteCard();
                     break;
                 case 5:
-
+                    refill();
                     break;
                 case 6:
 
@@ -59,8 +59,8 @@ public class UserController {
         System.out.println("1. Add card.");
         System.out.println("2. Card list.");
         System.out.println("3. Change card status.");
-        System.out.println("4. .");
-        System.out.println("5. .");
+        System.out.println("4. Delete card.");
+        System.out.println("5. Refill.");
         System.out.println("6. .");
         System.out.println("7. .");
         System.out.println("8. .");
@@ -95,5 +95,25 @@ public class UserController {
 
         Integer profileId = componentContainer.getCurrentProfile().getId();
         cardService.changeCardStatus(cardNumber,profileId);
+    }
+
+    public void deleteCard(){
+        System.out.print("Enter card number: ");
+        Scanner scanner = new Scanner(System.in);
+        String cardNumber = scanner.next();
+
+        Integer profileId = componentContainer.getCurrentProfile().getId();
+        cardService.deleteCard(profileId, cardNumber);
+    }
+
+    public void refill(){
+        System.out.print("Enter card number: ");
+        Scanner scanner = new Scanner(System.in);
+        String cardNumber = scanner.next();
+
+        System.out.print("Balance: ");
+        Double amount = scanner.nextDouble();
+
+        cardService.profileRefillCard(cardNumber, amount);
     }
 }

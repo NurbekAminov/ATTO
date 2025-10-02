@@ -20,6 +20,11 @@ public class ProfileCardRepository {
         return jdbcTemplate.update(sql, dto.getCardId(), dto.getProfileId(), true, dto.getCreatedDate());
     }
 
+    public int deleteProfileCard(Integer prifileId, Integer cardId){
+        String sql = "update profile_card set visible = false where profile_id =? and card_id =?";
+        return jdbcTemplate.update(sql, prifileId, cardId);
+    }
+
     public ProfileCardDTO getProfileCardByCardId(Integer cardId) {
         String sql = "select * from profile_card where card_id = ? and visible = true";
         List<ProfileCardDTO> list = jdbcTemplate.query(sql, new BeanPropertyRowMapper<>(ProfileCardDTO.class), cardId);
@@ -39,7 +44,7 @@ public class ProfileCardRepository {
             CardDTO card = new CardDTO();
             card.setCardNumber(rs.getString("card_number"));
             card.setExpDate(rs.getTimestamp("exp_date").toLocalDateTime().toLocalDate());
-            card.setBalance(rs.getInt("balance"));
+            card.setBalance(rs.getDouble("balance"));
 
             ProfileCardDTO profileCard = new ProfileCardDTO();
             profileCard.setCard(card);
@@ -49,14 +54,5 @@ public class ProfileCardRepository {
         };
         List<ProfileCardDTO> list = jdbcTemplate.query(sql, rowMapper, profileId);
         return list;
-    }
-
-    public Boolean checkCardIdByProfileId(Integer cardId, Integer profileId){
-        String sql = "select * from profile_card where card_id = ? and profile_id = ?";
-        List<ProfileCardDTO> list = jdbcTemplate.query(sql, new BeanPropertyRowMapper<>(ProfileCardDTO.class), cardId, profileId);
-        if (list.size() > 0) {
-            return true;
-        }
-        return false;
     }
 }

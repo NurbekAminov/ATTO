@@ -22,7 +22,7 @@ public class CardRepository {
         PreparedStatementSetter setter = ps -> {
             ps.setString(1, dto.getCardNumber());
             ps.setDate(2, Date.valueOf(dto.getExpDate())); // Todo Time da bug bolishi mumkun
-            ps.setInt(3, dto.getBalance());
+            ps.setDouble(3, dto.getBalance());
             ps.setString(4, dto.getStatus().name());
             ps.setBoolean(5, dto.getVisible());
             ps.setTimestamp(6, Timestamp.valueOf(dto.getCreated_date()));
@@ -53,5 +53,10 @@ public class CardRepository {
     public int changeCardStatus(Integer cardId, String status){
         String sql = "update card set status = ? where id = ?";
         return jdbcTemplate.update(sql, status, cardId);
+    }
+
+    public int updateCardBalance(String cardNumber, double balance) {
+        String sql = "update card set balance =? where card_number =?";
+        return jdbcTemplate.update(sql, balance, cardNumber);
     }
 }

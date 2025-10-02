@@ -8,7 +8,7 @@ import java.time.LocalDateTime;
 
 @Getter
 @Setter
-public class Terminal {
+public class TerminalDTO {
     private String code;
     private String address;
     private GeneralStatus status;
